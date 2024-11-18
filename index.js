@@ -14,7 +14,7 @@ function makebubble()
 makebubble();
 
 
-let timer=5;
+let timer=60;
 function settimer()
 {
     let timerInt = setInterval(function(){
