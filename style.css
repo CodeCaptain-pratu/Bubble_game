@@ -105,13 +105,23 @@ html,body
     #ptop{
         gap:10px;
     }
-    #box
-    {
+    #box{
         font-size: 1rem;
     }
-    #Numbers
-    {
+    #pbtm{
+        flex-wrap: wrap;
+        padding:10px;
+        gap:5px;
+        flex-direction: column;
+    }
+    #Numbers{
         font-size: 1rem;
         padding: 10px;
+    }
+    #bubble
+    {
+        width:21px;
+        height:21px;
+        font-size: 0.8rem;
     }
 }
