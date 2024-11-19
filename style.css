@@ -98,3 +98,20 @@ html,body
     font-size: 1.6rem;
     font-weight: 800;
 }
+
+/* media */
+@media(max-width:468px)
+{
+    #ptop{
+        gap:10px;
+    }
+    #box
+    {
+        font-size: 1rem;
+    }
+    #Numbers
+    {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
