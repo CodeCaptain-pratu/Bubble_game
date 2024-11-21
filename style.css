@@ -169,6 +169,7 @@ body {
         width: 21px;
         height: 21px;
         font-size: 0.8rem;
+        cursor: pointer;
     }
 }
 /* landing page styling */
