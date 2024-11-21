@@ -89,10 +89,10 @@ body {
 }
 
 #bubble {
+    background-color: blue;
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: blue;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -100,7 +100,12 @@ body {
     font-size: 1.6rem;
     font-weight: 800;
 }
-
+#bubble:hover{
+    background-color:yellow ;
+    color:black;
+    transition: 0.3s;
+    scale: 1.2;
+}
 /* media queries */
 @media(max-width:768px) {
     #panel {
@@ -169,7 +174,7 @@ body {
 /* landing page styling */
 #welcomeScreen
 {
-    background:url("./IMG/Bubbles.jpg");
+    background:url(https://img.freepik.com/free-vector/colorful-realistic-flowing-glossy-balls-background_52683-24419.jpg?ga=GA1.1.1829865695.1732151214);
     width: 100%;
     height:100%;
     background-repeat: no-repeat;
@@ -198,13 +203,14 @@ body {
     padding: 15px 55px;
     font-size: 1.5rem;
     border-radius: 20px;
-    background-color:blue;
+    background-color:darkmagenta;
     color: #fff;
     border: none;
     font-weight: 700;
     transition: 0.3s;
 }
 #screenContainer button:hover{
-    background-color: blue;
     cursor: pointer;
+    background-color:rgb(160, 45, 160);
+
 }
