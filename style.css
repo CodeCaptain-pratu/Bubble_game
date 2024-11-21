@@ -99,24 +99,59 @@ html,body
     font-weight: 800;
 }
 
-/* media */
+/* media queries */
+@media(max-width:768px)
+{
+    #panel{
+        width:75%;
+        height:80%;
+    }
+    #ptop{
+        gap:30px;
+    }
+    #box{
+        font-size: 1.2rem;
+        gap:0.5rem;
+    }
+    #Numbers
+    {
+        font-size: 1.2rem;
+        padding: 5px;
+    }
+    #pbtm
+    {
+        padding: 5px 15px;
+        gap:5px;
+    }
+    #bubble
+    {
+        width:23px;
+        height:23px;
+        font-size: 1rem;
+    }
+}
+
+
+
 @media(max-width:468px)
 {
+    #panel{
+        height:75%;
+    }
     #ptop{
         gap:10px;
     }
     #box{
         font-size: 1rem;
-    }
-    #pbtm{
-        flex-wrap: wrap;
-        padding:10px;
-        gap:5px;
-        flex-direction: column;
+        gap:0.5rem;
     }
     #Numbers{
         font-size: 1rem;
         padding: 10px;
+    }
+    #pbtm{
+        padding:10px;
+        gap:5px;
     }
     #bubble
     {
