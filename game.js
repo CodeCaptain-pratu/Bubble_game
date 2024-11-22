@@ -61,7 +61,6 @@ document.querySelector("#pbtm").addEventListener("click",function(dets)
 })
 let cursur=document.querySelector("#cursur");
  let main=document.querySelector("#main");
- let panel=document.querySelector("#panel");
 main.addEventListener("mousemove",function(dets){
     gsap.to(cursur,{
         x:dets.x,

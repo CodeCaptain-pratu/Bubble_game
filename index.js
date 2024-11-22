@@ -15,4 +15,13 @@ gsap.from("#button",{
     opacity:0,
  })
 
- 
+ let cursur=document.querySelector("#cursur");
+ let welcomeScreen=document.querySelector("#welcomeScreen");
+welcomeScreen.addEventListener("mousemove",function(dets){
+    gsap.to(cursur,{
+        x:dets.x,
+        y:dets.y,
+        duration:1,
+        ease:"back.out",
+    })
+})
