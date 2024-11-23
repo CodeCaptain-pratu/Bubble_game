@@ -1,6 +1,6 @@
 function start()
 {
-    window.location.href="game.html";
+    window.location.href="gameForm.html";
 }
 gsap.from("#screenContainer h1 span",{
    x:-20,
