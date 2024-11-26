@@ -268,18 +268,18 @@ body {
 }
 #form input
 {
-    width:100%;
+    width:25vw;
     height:5vh;
     margin:0.8rem;
     border-radius: 10px;
     padding: 1px 10px;
-    font-size: 1.4em;
+    font-size: 1vw;
 }
 #form input[type="submit"]{
     background-color:rgba(228, 11, 228, 0.883);
     color:#fff;
     font-weight: 700; 
-    font-size: 1.4rem; 
+    font-size: 1.5vw; 
     text-transform: capitalize;
 }
 video
