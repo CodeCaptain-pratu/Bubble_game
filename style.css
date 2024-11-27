@@ -110,6 +110,13 @@ body {
     transition: 0.3s;
     scale: 1.2;
 }
+#bubble:nth-child(4n+1){
+    background-color:rgb(104, 8, 200);
+}
+#bubble:nth-child(2n+1):hover{
+    background-color: white;
+    border:1px solid black;
+}
 #cursur
 {
     width:10px;
@@ -188,6 +195,7 @@ body {
         cursor: pointer;
     }
 }
+
 /* landing page styling */
 #welcomeScreen
 {
