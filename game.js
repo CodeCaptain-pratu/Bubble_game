@@ -5,11 +5,16 @@ function makebubble()
     let bubble="";
     let rn=0;
     for(let i=1;i<=162;i++)
-        {    
+        {   
             rn=Math.floor(Math.random()*10);         
             bubble+=`<div id="bubble">${rn}</div>`;
         }
         document.querySelector("#pbtm").innerHTML=bubble;
+        gsap.from("#bubble",{
+            x:-20,
+            opacity:0,
+            stagger:0.01,
+        })
 }
 makebubble();
 
@@ -59,13 +64,4 @@ document.querySelector("#pbtm").addEventListener("click",function(dets)
         makebubble();
     }
 })
-let cursur=document.querySelector("#cursur");
- let main=document.querySelector("#main");
-main.addEventListener("mousemove",function(dets){
-    gsap.to(cursur,{
-        x:dets.x,
-        y:dets.y,
-        duration:1,
-        ease:"back.out",
-    })
-})
+
