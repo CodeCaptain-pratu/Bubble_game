@@ -11,7 +11,7 @@ function makebubble()
         }
         document.querySelector("#pbtm").innerHTML=bubble;
         gsap.from("#bubble",{
-            x:-20,
+            y:-100,
             opacity:0,
             stagger:0.01,
         })
