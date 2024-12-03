@@ -281,3 +281,15 @@ video
     width: 100%;
     object-fit: cover;
 }
+#pausebtn{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+#resumebtn{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}

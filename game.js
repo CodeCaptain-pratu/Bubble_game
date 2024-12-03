@@ -1,4 +1,4 @@
-
+let isPause=false;
 
 function makebubble()
 {
@@ -20,27 +20,30 @@ makebubble();
 
 
 let timer=60;
+let timerInt;
 function settimer()
 {
-    let timerInt = setInterval(function(){
+     timerInt = setInterval(function(){
         if(timer>0)
         {
             timer--;
             document.querySelector(".timer").innerHTML=timer;
         }
-        else
+        if(timer===0)
         {
             clearInterval(timerInt);
             document.querySelector("#pbtm").style.backgroundColor="black";
             document.querySelector("#pbtm").innerHTML=`<h1>Game Over</h1>
             <h2>Your score is ${score}</h2>`;
+            
         }
+       
     },1000);
 }
 settimer();
 
 let newHit=0;
-function getNewHit()
+function     getNewHit()
 {
     newHit=Math.floor(Math.random()*10);
     document.querySelector(".hit").innerHTML=newHit;
@@ -65,3 +68,24 @@ document.querySelector("#pbtm").addEventListener("click",function(dets)
     }
 })
 
+let pause=document.querySelector("#pausebtn");
+console.log(pause);
+pause.addEventListener("click",function(){
+    console.log("pause clicked");
+    isPause=true;
+    clearInterval(timerInt);
+    console.log("timer pause at",timer);
+});
+
+
+let resume=document.querySelector("#resumebtn");
+console.log(resume);
+resume.addEventListener("click",function(){
+    console.log("resume clicked");
+    if(isPause)
+    {
+        isPause=false;
+        console.log(timer);
+        settimer();
+    }
+})
