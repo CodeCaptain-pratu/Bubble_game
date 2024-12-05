@@ -1,4 +1,8 @@
 let isPause=false;
+let highScore=0;
+let timer=10;
+let timerInt;
+let changeScore=0;
 
 function makebubble()
 {
@@ -19,8 +23,6 @@ function makebubble()
 makebubble();
 
 
-let timer=60;
-let timerInt;
 function settimer()
 {
      timerInt = setInterval(function(){
@@ -32,9 +34,9 @@ function settimer()
         if(timer===0)
         {
             clearInterval(timerInt);
-            document.querySelector("#pbtm").style.backgroundColor="black";
             document.querySelector("#pbtm").innerHTML=`<h1>Game Over</h1>
             <h2>Your score is ${score}</h2>`;
+            // <h2 id="high-score">The high score is ${highScore}</h2>`;
             
         }
        
@@ -43,7 +45,7 @@ function settimer()
 settimer();
 
 let newHit=0;
-function     getNewHit()
+function getNewHit()
 {
     newHit=Math.floor(Math.random()*10);
     document.querySelector(".hit").innerHTML=newHit;
@@ -55,6 +57,7 @@ function increaseScore()
 {
     score+=10;
     document.querySelector(".score").innerHTML=score;
+    return score;
 }
 
 document.querySelector("#pbtm").addEventListener("click",function(dets)
@@ -62,14 +65,20 @@ document.querySelector("#pbtm").addEventListener("click",function(dets)
     let hittedBubble=Number(dets.target.innerHTML);
     if(newHit===hittedBubble)
     {
+        // changeScore=
         increaseScore();
+        // console.log(changeScore);
+        // if(changeScore>highScore)
+        // {
+        //     highScore=changeScore;
+        //     document.querySelector("#highScore");
+        // }
         getNewHit();
         makebubble();
     }
 })
 
 let pause=document.querySelector("#pausebtn");
-console.log(pause);
 pause.addEventListener("click",function(){
     console.log("pause clicked");
     isPause=true;
@@ -79,7 +88,6 @@ pause.addEventListener("click",function(){
 
 
 let resume=document.querySelector("#resumebtn");
-console.log(resume);
 resume.addEventListener("click",function(){
     console.log("resume clicked");
     if(isPause)
@@ -88,4 +96,8 @@ resume.addEventListener("click",function(){
         console.log(timer);
         settimer();
     }
+})
+let exit=document.querySelector("#exitbtn");
+exit.addEventListener("click",function(){
+    window.location.href="gameForm.html";
 })

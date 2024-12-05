@@ -293,3 +293,12 @@ video
     margin: 10px;
     border-radius: 10px;
 }
+#exitbtn{
+    background-color: #fff;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+}
+button:hover{
+    cursor: pointer;
+}
