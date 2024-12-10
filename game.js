@@ -4,6 +4,19 @@ let timer=10;
 let timerInt;
 let changeScore=0;
 
+function initializeHighScore(){
+    const storedHighScore=localStorage.getItem("highScore");
+    if(storedHighScore){
+        highScore=Number(storedHighScore);
+    }
+}
+function updateScore(){
+    if(score>highScore){
+        highScore=score;
+        localStorage.setItem("highScore",highScore);
+    }
+}
+
 function makebubble()
 {
     let bubble="";
@@ -34,9 +47,10 @@ function settimer()
         if(timer===0)
         {
             clearInterval(timerInt);
+            updateScore();
             document.querySelector("#pbtm").innerHTML=`<h1>Game Over</h1>
-            <h2>Your score is ${score}</h2>`;
-            // <h2 id="high-score">The high score is ${highScore}</h2>`;
+            <h2>Your score is ${score}</h2>;
+            <h2 id="high-score">The high score is ${highScore}</h2>`;
             
         }
        
@@ -65,14 +79,7 @@ document.querySelector("#pbtm").addEventListener("click",function(dets)
     let hittedBubble=Number(dets.target.innerHTML);
     if(newHit===hittedBubble)
     {
-        // changeScore=
         increaseScore();
-        // console.log(changeScore);
-        // if(changeScore>highScore)
-        // {
-        //     highScore=changeScore;
-        //     document.querySelector("#highScore");
-        // }
         getNewHit();
         makebubble();
     }
@@ -99,5 +106,6 @@ resume.addEventListener("click",function(){
 })
 let exit=document.querySelector("#exitbtn");
 exit.addEventListener("click",function(){
-    window.location.href="gameForm.html";
+    window.location.href="index.html";
 })
+initializeHighScore();
