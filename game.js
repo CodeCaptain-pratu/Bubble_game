@@ -1,6 +1,6 @@
 let isPause=false;
 let highScore=0;
-let timer=10;
+let timer=60;
 let timerInt;
 let changeScore=0;
 
@@ -49,7 +49,7 @@ function settimer()
             clearInterval(timerInt);
             updateScore();
             document.querySelector("#pbtm").innerHTML=`<h1>Game Over</h1>
-            <h2>Your score is ${score}</h2>;
+            <h2>Your score is ${score}</h2>
             <h2 id="high-score">The high score is ${highScore}</h2>`;
             
         }
