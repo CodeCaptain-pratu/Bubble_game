@@ -1,6 +1,6 @@
 let isPause=false;
 let highScore=0;
-let timer=60;
+let timer=15;
 let timerInt;
 let changeScore=0;
 
@@ -21,12 +21,18 @@ function makebubble()
 {
     let bubble="";
     let rn=0;
-    for(let i=1;i<=162;i++)
+    const numberOfBubbles = 102; // Define number of bubbles dynamically
+    const columns = 14; // Define number of columns
+    const rows = Math.ceil(numberOfBubbles / columns); // Calculate rows dynamically
+
+
+    for(let i=1;i<=numberOfBubbles;i++)
         {   
             rn=Math.floor(Math.random()*10);         
             bubble+=`<div id="bubble">${rn}</div>`;
         }
         document.querySelector("#pbtm").innerHTML=bubble;
+    
         gsap.from("#bubble",{
             y:-100,
             opacity:0,
@@ -50,7 +56,8 @@ function settimer()
             updateScore();
             document.querySelector("#pbtm").innerHTML=`<h1>Game Over</h1>
             <h2>Your score is ${score}</h2>
-            <h2 id="high-score">The high score is ${highScore}</h2>`;
+            <h2 id="high-score">The high score is ${highScore}</h2>
+            <button class="playAgain">Play Again</button>`;
             
         }
        
@@ -109,3 +116,9 @@ exit.addEventListener("click",function(){
     window.location.href="index.html";
 })
 initializeHighScore();
+let playAgain=document.querySelector(".playAgain");
+console.log(playAgain);
+playAgain.addEventListener("click",function(){
+    console.log("clicked play again");
+    window.location.href="game.html";
+})
